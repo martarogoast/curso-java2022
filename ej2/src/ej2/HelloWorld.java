@@ -8,7 +8,7 @@ public class HelloWorld {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)  throws Exception {
 		System.out.println("Hello world");
 		//Imprimir la tablas de multiplicar
 		for (int i =1;i<=10;i++) {
@@ -19,14 +19,21 @@ public class HelloWorld {
 		}
 		//Calificar
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduzca su calificación");
+		System.out.println("Introduzca su calificacion");
 		int calificación = sc.nextInt();
 		//TODO completar
-		if (calificación>=0&&calificación<50) {
+		if (calificación>=0&&calificación<51) {
 			System.out.println("Suspenso");
-		} else if (calificación>=50&&calificación<75) {
-			System.out.println();
+		} else if (calificación>=51&&calificación<=75) {
+			System.out.println("Recuperar");
+		} else if (calificación>75&&calificación<=90) {
+			System.out.println("Aprobado");
+		} else if (calificación>90&&calificación<=100) {
+			System.out.println("Aprobado con merito");
+		} else {
+			System.out.println("Puntuacion invalida");
 		}
+		sc.close();
 	}
 
 }
