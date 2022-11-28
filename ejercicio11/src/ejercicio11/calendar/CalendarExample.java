@@ -12,22 +12,18 @@ import java.util.Scanner;
  */
 public class CalendarExample {
 
+	/**
+	 * Peticion de la entrada de datos por teclado 
+	 * @param args null
+	 */
 	public static void main(String[] args) {
 		Calendar cal = Calendar.getInstance();
-//		cal.set(1992, Calendar.SEPTEMBER, 7);
-		
-//		cal.add(Calendar.DATE, 9);	//Añado 10 dias
-//		cal.add(Calendar.MONTH,2);	//Añado 2 meses
-//		
+	
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy EEEEE");
 		System.out.println("La fecha de hoy es: " + sdf.format(cal.getTime()));
-//		
-//		System.out.println("Datos a obtener: ");
-//		System.out.println("Mi año de nacimiento es " + cal.get(Calendar.YEAR));
-//		System.out.println("Mi mes de nacimiento es " + ((cal.get(Calendar.MONTH)+1)));
-//		System.out.println("Mi dia de nacimiento es " + cal.get(Calendar.DATE));
-//		System.out.println("He nacido en " + cal.get(Calendar.DAY_OF_WEEK));
-//		
+
+		System.out.println("_____________________________");
+		
 		System.out.println("Ingrese el año");
 		Scanner sc = new Scanner(System.in);
 		int anyo = sc.nextInt();
@@ -37,11 +33,16 @@ public class CalendarExample {
 		int dia = sc.nextInt();
 		
 		calendarPrint(dia, mes, anyo);
-//		calendarPrint(13, 2, 1972);
 		
 		sc.close();
 	}
 	
+	/**
+	 * Imprime la hoja del calendario de este mes señalando el dia
+	 * @param pdia Dia a señalar
+	 * @param pmes Mes (1 a 12)
+	 * @param panyo Año
+	 */
 	public static void calendarPrint(int pdia, int pmes, int panyo) {
 		//Fila de días
 		System.out.println("Sun\tMon\tTue\tWed\tThu\tFri\tSat");
