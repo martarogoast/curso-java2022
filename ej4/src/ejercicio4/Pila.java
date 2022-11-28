@@ -1,4 +1,4 @@
-package com.capgemini.training.java.ej4;
+package ejercicio4;
 
 public class Pila {
 	
