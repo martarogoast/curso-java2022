@@ -1,6 +1,7 @@
 package ejercicio4;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MiPila {
 	private ArrayList<String> list;
@@ -66,18 +67,20 @@ public class MiPila {
 				((MiPila)obj).getList().equals(list);
 	}
 
-	//TODO hashcode
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return super.hashCode()+list.hashCode();
 	}
 
-	//TODO toString
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		StringBuilder sb = new StringBuilder();
+		Iterator<String> it = list.iterator();
+		while (it.hasNext()) {
+			sb.append(it.next());
+			sb.append("\t");
+		}
+		return sb.toString();
 	}
 	
 }
