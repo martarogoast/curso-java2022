@@ -47,7 +47,6 @@ public abstract class SetOperations {
 	
 	/**
 	 * Diferencia simetrica de A y B
-	 * @param <T>
 	 * @param setA Conjunto A
 	 * @param setB Conjunto B
 	 * @return Elementos de A y B que no estan en los dos
