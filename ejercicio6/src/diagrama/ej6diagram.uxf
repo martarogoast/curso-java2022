@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>220</y>
+      <x>230</x>
+      <y>20</y>
       <w>210</w>
-      <h>70</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>/ItemInventario/
 --
@@ -17,60 +17,97 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>20</y>
+      <x>40</x>
+      <y>240</y>
       <w>250</w>
-      <h>120</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>PC
 --
-int nroSerie
-boolean esNotebook
+- int nroSerie
+- boolean esNotebook
 --
-getId()
-esNotebook()
-PC(int nroSerie, boolean esNotebook)</panel_attributes>
+getNroSerie(): int
+setNroSerie(int): void
+esNotebook(): boolena
+setEsNotebook(boolean): void
+--
+PC(int, boolean)
+--
+getId(): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>430</y>
+      <x>310</x>
+      <y>240</y>
       <w>440</w>
-      <h>140</h>
+      <h>230</h>
     </coordinates>
     <panel_attributes>Silla
 --
-int lote
-int numeroDentroDeLote
-boolean conRueditas
+- int lote
+- int numeroDentroDeLote
+- boolean conRueditas
 --
-getId()
-conRueditas()
-Silla(int lote, int numeroDentroDeLote, boolean conRueditas)</panel_attributes>
++ getlote(): int
++ setLote(int): void
++ getNumeroDeLote(): int
++ setNumeroDeLote(int): void
++ isConRueditas: boolean
++ setConRueditas(boolean): void
+--
+Silla (int, int, boolean)
+--
++ getId(): int
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>100</x>
+      <x>160</x>
       <y>70</y>
-      <w>120</w>
-      <h>170</h>
+      <w>170</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;100.0;10.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>100</x>
-      <y>280</y>
-      <w>110</w>
-      <h>250</h>
+      <x>330</x>
+      <y>70</y>
+      <w>210</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;230.0</additional_attributes>
+    <additional_attributes>10.0;10.0;190.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>40</x>
+      <y>90</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BarcodeReadable
+--
++ getBarcode()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>160</y>
+      <w>60</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40.0;80.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
