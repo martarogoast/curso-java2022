@@ -56,14 +56,17 @@ class PiedraPapelTijeraFactoryTest {
 	@Test
 	void testPiedraGanaTijera() {
 		assertEquals(piedra.comparar(tijera), 1);
+		assertEquals(piedra.getDescripcionResultado(), "piedra gana a tijera");
 	}
 	@Test
 	void testPiedraEmpataPiedra() {
 		assertEquals(piedra.comparar(new Piedra()), 0);
+		assertEquals(piedra.getDescripcionResultado(), "piedra empata con piedra");
 	}
 	@Test
 	void testPiedraPierdeConPapel() {
 		assertEquals(piedra.comparar(papel), -1);
+		assertEquals(piedra.getDescripcionResultado(), "piedra pierde con papel");
 	}
 	
 	//Papel - comparar
@@ -82,10 +85,6 @@ class PiedraPapelTijeraFactoryTest {
 		@Test
 		void testPapelPierdeConTijera() {
 			assertEquals(papel.comparar(tijera), -1);
-		}
-		@Test
-		void testPapelPierdeConTijeraTexto() {
-			papel.comparar(tijera);
 			assertEquals(papel.getDescripcionResultado(), "papel pierde con tijera");
 		}
 		
@@ -93,30 +92,18 @@ class PiedraPapelTijeraFactoryTest {
 		@Test
 		void testTijeraGanaPapel() {
 			assertEquals(tijera.comparar(papel), 1);
-		}
-		@Test
-		void testTijeraGanaPapelTexto() {
-			tijera.comparar(papel);
 			assertEquals(tijera.getDescripcionResultado(), "tijera gana a papel");
 		}
 		
 		@Test
 		void testTijeraEmpataTijera() {
 			assertEquals(tijera.comparar(new Tijera()), 0);
-		}
-		@Test
-		void testTijeraEmpataTijeraTexto() {
-			tijera.comparar(new Tijera());
 			assertEquals(tijera.getDescripcionResultado(), "tijera empata con tijera");
 		}
 		
 		@Test
 		void testTijeraPierdeConPiedra() {
 			assertEquals(tijera.comparar(piedra), -1);
-		}
-		@Test
-		void testTijeraPierdeConPiedraTexto() {
-			tijera.comparar(piedra);
 			assertEquals(tijera.getDescripcionResultado(), "tijera pierde con piedra");
 		}
 }
