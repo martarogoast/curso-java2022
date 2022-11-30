@@ -1,4 +1,4 @@
-package ejercicio10.tests;
+package planetas.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ejercicio10.Planeta;
+import planetas.Planeta;
 
 class planetasTest {
 
