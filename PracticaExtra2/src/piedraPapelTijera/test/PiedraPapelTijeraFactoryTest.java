@@ -70,19 +70,12 @@ class PiedraPapelTijeraFactoryTest {
 		@Test
 		void testPapelGanaPiedra() {
 			assertEquals(papel.comparar(piedra), 1);
-		}
-		@Test
-		void testPapelGanaPiedraTexto() {
-			papel.comparar(piedra);
 			assertEquals(papel.getDescripcionResultado(), "papel gana a piedra");
 		}
 		
 		@Test
 		void testPapelEmpataPapel() {
 			assertEquals(papel.comparar(new Papel()), 0);
-		}
-		void testPapelEmpataPapelTexto() {
-			papel.comparar(new Papel());
 			assertEquals(papel.getDescripcionResultado(), "papel empata con papel");
 		}
 		
