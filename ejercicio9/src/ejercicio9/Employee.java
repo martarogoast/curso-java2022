@@ -105,7 +105,7 @@ public class Employee {
 		setNombre(nombre);
 		this.edad = edad;
 		this.salario = salario;
-		setFechaIngreso(new Date());
+		setFechaIngreso(fechaIngreso);
 	}
 	
 	/**
