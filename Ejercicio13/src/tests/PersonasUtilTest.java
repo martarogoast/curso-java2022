@@ -17,64 +17,51 @@ import util.PersonasUtil;
 class PersonasUtilTest {
 	private Persona marta;
 	private Persona marina;
+	private Persona pers1;
+	private Persona pers2;
+	private Persona pers3;
+	private Persona pers4;
+	private Persona pers5;
+	private List<Persona> personasList;
+	private Map<Integer, Persona> personasMap;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		marta = new Persona(123456, 30, "Marta");
 		marina = new Persona(654321, 37, "Marina");
+		
+		personasList = new ArrayList<Persona>();
+		personasList.add(marta);
+		personasList.add(marina);
+		
+		personasMap = new HashMap<Integer, Persona>();
+		personasMap.put((Integer)marta.getExpediente(), marta);
+		personasMap.put((Integer)marina.getExpediente(), marina);
+		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		marta = null;
 		marina = null;
+		personasList = null;
+		personasMap = null;
 	}
 
 	@Test
-	void testPersonaGetNombre() {
-		assertEquals(marta.getNombre(), "Marta");
+	void testGetPersonasMap_true() {
+		Map<Integer, Persona> expectedMap = new HashMap<Integer, Persona>();
+		expectedMap.put(marta.getExpediente(), new Persona(marta.getExpediente(), marta.getEdad(), marta.getNombre()));
+		expectedMap.put(marina.getExpediente(), new Persona(marina.getExpediente(), marina.getEdad(), marina.getNombre()));
+		assertEquals(expectedMap, PersonasUtil.getPersonas(personasList));
 	}
 	
 	@Test
-	void testPersonaGetExp() {
-		assertEquals(marta.getExpediente(), 123456);
+	void testGetPersonasMap_false() {
+		Map<Integer, Persona> expectedMap = new HashMap<Integer, Persona>();
+		expectedMap.put(marta.getExpediente(), new Persona(marta.getExpediente(), 19, marta.getNombre()));
+		expectedMap.put(marina.getExpediente(), new Persona(marina.getExpediente(), 27, marina.getNombre()));
+		assertFalse(expectedMap.equals(PersonasUtil.getPersonas(personasList)));
 	}
-	
-	@Test
-	void testPersonaGetEdad() {
-		assertEquals(marta.getEdad(), 30);
-	}
-	
-	@Test
-	void testPersonaSetEdad() {
-		marta.setEdad(35);
-		assertEquals(marta.getEdad(), 35);
-	}
-	
-	@Test
-	void testPersonaSetNombre() {
-		marta.setNombre("Martaaaaa");
-		assertEquals(marta.getNombre(), "Martaaaaa");
-	}
-	
-	@Test
-	void testPersonaSetExp() {
-		marta.setExpediente(13848233);
-		assertEquals(marta.getExpediente(), 13848233);
-	}
-	
-
-	@Test
-	void testGetPersonasMap() {
-		Map<Integer, Persona> personasMap = new HashMap<Integer, Persona>();
-		personasMap.put((Integer)marta.getExpediente(), marta);
-		personasMap.put((Integer)marina.getExpediente(), marina);
 		
-		List<Persona> personaList = new ArrayList<Persona>();
-		personaList.add(marta);
-		personaList.add(marina);
-		
-		Map<Integer, Persona> personasGetPersonas =  PersonasUtil.getPersonas(personaList);
-		assertTrue(personasMap.equals(personasGetPersonas));
-	}
 }
