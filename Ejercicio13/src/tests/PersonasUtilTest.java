@@ -17,11 +17,6 @@ import util.PersonasUtil;
 class PersonasUtilTest {
 	private Persona marta;
 	private Persona marina;
-	private Persona pers1;
-	private Persona pers2;
-	private Persona pers3;
-	private Persona pers4;
-	private Persona pers5;
 	private List<Persona> personasList;
 	private Map<Integer, Persona> personasMap;
 
@@ -63,5 +58,12 @@ class PersonasUtilTest {
 		expectedMap.put(marina.getExpediente(), new Persona(marina.getExpediente(), 27, marina.getNombre()));
 		assertFalse(expectedMap.equals(PersonasUtil.getPersonas(personasList)));
 	}
-		
+	
+	
+	@Test
+	void testInsertion() {
+		Persona nPersona = new Persona(666, 60, "Herminia");
+		personasMap.put(nPersona.getExpediente(), nPersona);
+		assertTrue(personasMap.containsKey(nPersona.getExpediente()));
+	}
 }
