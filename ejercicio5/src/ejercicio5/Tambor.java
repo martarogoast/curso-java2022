@@ -5,11 +5,11 @@ package ejercicio5;
  * @author Marta Rodriguez
  *
  */
-public class Violin extends Instrumento {
+public class Tambor extends Instrumento {
 
 	@Override
 	public String sonar() {
-		return "Soy el violin";
+		return "Soy el tambor";
 	}
 
 }

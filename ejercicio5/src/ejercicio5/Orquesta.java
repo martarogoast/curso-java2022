@@ -2,6 +2,11 @@ package ejercicio5;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Marta Rodriguez
+ *
+ */
 public class Orquesta {
 
 	private static ArrayList<Instrumento> instrumentos = new ArrayList<Instrumento>();
