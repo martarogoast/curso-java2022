@@ -2,7 +2,11 @@ package ejercicio4;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+/**
+ * Clase que crea una pila que almacena strings con algunos métodos para gestionarla
+ * @author Marta Rodriguez
+ *
+ */
 public class MiPila {
 	private ArrayList<String> list;
 	 
@@ -62,7 +66,7 @@ public class MiPila {
 	
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj) &&
+		return obj != null &&
 				obj instanceof MiPila &&
 				((MiPila)obj).getList().equals(list);
 	}
