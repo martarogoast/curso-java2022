@@ -34,12 +34,12 @@ public class Piedra extends PiedraPapelTijeraFactory {
 			descripcionResultado = nombre + " gana a " + pPiedraPapelTijera.getNombre();
 			break;
 		case LAGARTO:
-			result = -1; // Gana
+			result = 1; // Gana
 			descripcionResultado = nombre + " aplasta a " + pPiedraPapelTijera.getNombre();
 			break;
 		case SPOCK:
-			result = 1; // Pierde
-			descripcionResultado = nombre + " vaporiza a " + pPiedraPapelTijera.getNombre();
+			result = -1; // Pierde
+			descripcionResultado = nombre + " es vaporizada por " + pPiedraPapelTijera.getNombre();
 			break;
 		default:
 			result = 0; // Empate
