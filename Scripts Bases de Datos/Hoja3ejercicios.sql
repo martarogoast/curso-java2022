@@ -69,16 +69,41 @@ INNER JOIN  departments d ON e.department_id = d.department_id
 WHERE salary <= ALL (SELECT salary FROM employees e2
 					WHERE e2.department_id = e.department_id);
 /*---------------------------------------------------------------------------------------*/   
-/* Ejercicio 9 */
+/* Ejercicio 9 NO EXISTE */
+/*---------------------------------------------------------------------------------------*/   
+/* Ejercicio 10 */
+SELECT employee_id, last_name, job_id, salary FROM employees
+WHERE job_id <> 'IT_PROG' AND salary > ALL (SELECT salary FROM employees
+										WHERE job_id = 'IT_PROG');
+
+SELECT employee_id, last_name, job_id, salary FROM employees
+WHERE salary > ALL (SELECT salary FROM employees
+										WHERE job_id = 'IT_PROG');
+/*---------------------------------------------------------------------------------------*/   
+/* Ejercicio 11 */
+
+/*La que pide el ejercicio, que solo devuelve las de Europa porque el nombre de 
+la región del continente americano no es 'America' sino 'Americas' */
+SELECT COUNT(c.country_id) AS departments_in_country, c.country_name FROM departments d
+INNER JOIN locations l ON d.location_id = l.location_id
+INNER JOIN countries c ON l.country_id = c.country_id
+INNER JOIN regions r ON r.region_id = c.region_ID
+WHERE r.region_name = 'America' OR r.region_name = 'Europe'
+GROUP BY c.country_id;
+
+/*La que devuelve los departamentos por país de Europa y América*/
+SELECT COUNT(c.country_id) AS departments_in_country, c.country_name FROM departments d
+INNER JOIN locations l ON d.location_id = l.location_id
+INNER JOIN countries c ON l.country_id = c.country_id
+INNER JOIN regions r ON r.region_id = c.region_ID
+WHERE r.region_name = 'Americas' OR r.region_name = 'Europe'
+GROUP BY c.country_id;
 
 
 
 
-SELECT * FROM Employees;
-SELECT FIRST_NAME, LAST_NAME, MANAGER_ID, JOB_ID FROM employees;
-DESC employees;
-DESC countries;
-DESC locations;
+
+
 
 
 
