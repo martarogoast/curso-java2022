@@ -6,6 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Conexión desde Java a una base de datos
+ * @author Marta Rodriguez
+ *
+ */
 public class JdbcPrueba {
 
 	public static void main(String[] args) {
@@ -29,7 +34,8 @@ public class JdbcPrueba {
 				System.out.println("--------------------------------------------------");
 			}
 			
-			//Cerrar conexion
+			//Cerrar cosas - IMPORTATISIMO
+			sql.close();
 			con.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

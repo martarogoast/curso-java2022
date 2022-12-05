@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario Avanzado Producto</title>
+</head>
+<body>
+	<h1>Rellena tu CV</h1>
+	<form>
+		<fieldset>
+			<legend>Datos básicos</legend>
+		
+			<label for="fnombre">Nombre</label><br> 
+			<input type="text" id="fnombre" name="fnombre" maxlength="30"><br> 
+			
+			<label for="fdesc">Descripción</label><br> 
+			<textarea id="fdesc" name="fdesc" cols="40" rows="5"></textarea><br> 
+		
+			Foto <label for="ffoto"></label>
+			<input type="text" id="ffoto" name="ffoto">
+			<input type="file" value="Elegir" name="adjunto"/> <br>
+			
+			<input type="checkbox" name="fcontador" value="contador" />Añadir al contador de visitas<br>
+		</fieldset>
+	
+		<fieldset>
+			<legend>Datos económicos</legend>
+			
+			<label for="precio"></label>
+			<input type="text"id="fprecio" name="fprecio" pattern="[0-1000000]"/>€     
+			
+			<label for="impuestos">Impuestos</label>
+			<select id="impuestos" name="impuestos">
+				<option value="4" selected="selected">4%</option>
+				<option value="7">7%</option>
+				<option value="16">16</option>
+				<option value="25">25%</option>
+			</select><br>
+			
+			<br>Promoción<br>
+			<input type="radio" name="promo" value="ninguno" checked="true">
+			<label for="ninguno">Ninguno</label><br>
+			<input type="radio" name="promo" value="gratis">
+			<label for="gratis">Transporte Gratuito</label><br>
+			<input type="radio" name="descuentocinco" value="descuentocinco">
+			<label for="descuentocinco">Descuento 5%</label><br>
+		
+		</fieldset>
+	</form>
+</body>
+</html>
