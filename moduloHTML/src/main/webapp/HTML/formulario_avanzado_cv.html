@@ -22,7 +22,7 @@
 			
 			<label for="fecha">Fecha de nacimiento</label><br>
 <!-- 				<input type="date" id="dia" name="dia"><br>  -->
-				<input type="text" id="dia" name="dia" pattern="[1-31]" maxlength="2" size="2">
+				<input type="text" id="dia" name="dia" min="1" max="31" maxlength="2" size="2">
 				<select name="mes" class="datefield month">
 				    <option value="" selected="selected">-Mes-</option>
 				    <option value="01">Enero</option>
@@ -38,7 +38,7 @@
 				    <option value="11">Noviembre</option>
 				    <option value="12">Diciembre</option>
 				</select>
-				<input type="text" id="anyo" name="anyo" pattern="[1900-2022]" maxlength="4" size="2"><br><br>
+				<input type="text" id="anyo" name="anyo" min="1900" max="2100" maxlength="4" size="2"><br><br>
 				<label for="intereses">Temas de interés</label><br>
 				<select id="intereses" name="intereses" size="5">
 				  <option value="bbdd">Administración de bases de datos</option>

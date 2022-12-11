@@ -5,7 +5,7 @@
 <title>Formulario Avanzado Producto</title>
 </head>
 <body>
-	<h1>Rellena tu CV</h1>
+	<h1>Formulario Avanzado Producto</h1>
 	<form>
 		<fieldset>
 			<legend>Datos básicos</legend>
@@ -27,7 +27,7 @@
 			<legend>Datos económicos</legend>
 			
 			<label for="precio"></label>
-			<input type="text"id="fprecio" name="fprecio" pattern="[0-1000000]"/>€     
+			<input type="text"id="fprecio" name="fprecio" min="0" max="1000000"/>€     
 			
 			<label for="impuestos">Impuestos</label>
 			<select id="impuestos" name="impuestos">
@@ -42,7 +42,7 @@
 			<label for="ninguno">Ninguno</label><br>
 			<input type="radio" name="promo" value="gratis">
 			<label for="gratis">Transporte Gratuito</label><br>
-			<input type="radio" name="descuentocinco" value="descuentocinco">
+			<input type="radio" name="promo" value="descuentocinco">
 			<label for="descuentocinco">Descuento 5%</label><br>
 		
 		</fieldset>
