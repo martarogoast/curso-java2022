@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario Avanzado CV con Javascript</title>
+</head>
+<body>
+	<h1>Rellena tu CV</h1>
+	<form name="formulario" id = "formulario" onsubmit="return validar()">
+		<fieldset>
+			<legend>Datos personales</legend>
+			
+			<label for="prov">Provincia</label> <br/>
+			<select id="prov" name="prov">
+				<option value="" selected="selected">-selecciona-</option>
+				<option value="asturias">Asturias</option>
+				<option value="corunya">A coruña</option>
+				<option value="Lugo">Lugo</option>
+				<option value="ourense">Ourense</option>
+				<option value="pontevedra">Pontevedra</option>
+			</select><br>
+			
+			<label for="fecha">Fecha de nacimiento</label><br>
+				<input type="text" id="dia" name="dia" maxlength="2" size="2">
+				<select name="mes" id = "mes" class="datefield month">
+				    <option value="" selected="selected">-Mes-</option>
+				    <option value="01">Enero</option>
+				    <option value="02">Febrero</option>
+				    <option value="03">Marzo</option>
+				    <option value="04">Abril</option>
+				    <option value="05">Mayo</option>
+				    <option value="06">Junio</option>
+				    <option value="07">Julio</option>
+				    <option value="08">Agosto</option>
+				    <option value="09">Septiembre</option>
+				    <option value="10">Octubre</option>
+				    <option value="11">Noviembre</option>
+				    <option value="12">Diciembre</option>
+				</select>
+				<input type="text" id="anyo" name="anyo" maxlength="4" size="2"><br><br>
+				<label for="intereses">Temas de interés</label><br>
+				<select id="intereses" name="intereses" size="5">
+				  <option value="bbdd">Administración de bases de datos</option>
+				  <option value="analisisyprog">Análisis y programación</option>
+				  <option value="arquitectura">Arquitectura</option>
+				  <option value="calidad">Calidad</option>
+				  <option value="negocios">ERP, CRM, Business Intelligence</option>
+				  <option value="pintura">Pintura</option>
+				  <option value="zoologia">zoología</option>
+				</select>
+		</fieldset>
+        <p><input type="submit" name="sumbit" value = "Enviar"></p>
+	</form>
+    <script type="text/javascript" src="../js/ejercicio9_formulario1.js"></script>
+	<p><a href="./index.html">Volver</a></p>
+</body>
+</html>
