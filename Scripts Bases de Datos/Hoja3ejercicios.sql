@@ -46,11 +46,25 @@ SELECT concat(empl.first_name, ' ', empl.last_name, ' es empleado de ',
     LEFT JOIN employees man  ON empl.manager_id = man.EMPLOYEE_ID;
 /*---------------------------------------------------------------------------------------*/   
 /*Ejercicio 7*/
-/*Elabora una consulta que despliegue el nombre y el apellido del empleado,la fecha de contratación , 
-la fecha de la primer revisión salarial que fue a los seis meses de haber sido contratado, 
-su primer día viernes en la empresa para los empleados del departamento de Marketing.*/
-SELECT first_name, last_name, hire_date FROM employees;
-/*TODO*/
+/*No devuelve nada porque no hay nadie en Marketing, lo he probado con Shipping*/
+select first_name AS 'Nombre',
+	last_name AS 'Apellidos', 
+    hire_date AS 'Fecha contratación',  
+	date_add(hire_date, INTERVAL 6 MONTH ) as 'Primera revisión',
+	case dayname(hire_date)
+		when 'monday' then date_add(hire_date,INTERVAL 4 DAY)
+		when 'tuesday' then date_add(hire_date, INTERVAL 3 day)
+		when 'wednesday' then date_add(hire_date, INTERVAL 2 day)
+		when 'thursday' then date_add(hire_date, INTERVAL 1 day)
+		when 'friday' then hire_date
+		when 'saturday' then date_add(hire_date, INTERVAL 6 day)
+		when 'sunday' then date_add(hire_date, INTERVAL 5 day)
+		else 'error'
+	  end 
+      as'Primer Viernes',
+      department_name AS 'Departamento'
+from employees emp inner join departments dep on emp.DEPARTMENT_ID = dep.DEPARTMENT_ID
+where DEPARTMENT_name = 'Marketing' ;
 /*---------------------------------------------------------------------------------------*/   
 /*Ejercicio 8*/
 /* Forma 1 - ANY */
